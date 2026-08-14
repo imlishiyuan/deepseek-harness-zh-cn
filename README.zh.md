@@ -1,5 +1,11 @@
 # deepseek-harness-zh-cn
 
+[English](README.md) | **简体中文**
+
+![npm version](https://img.shields.io/npm/v/deepseek-harness-zh-cn)
+![license](https://img.shields.io/npm/l/deepseek-harness-zh-cn)
+![downloads](https://img.shields.io/npm/dm/deepseek-harness-zh-cn)
+
 让 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的**推理（reasoning）与输出**默认使用简体中文的中文插件。
 
 ## 简要说明

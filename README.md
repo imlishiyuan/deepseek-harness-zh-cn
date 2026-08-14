@@ -1,5 +1,11 @@
 # deepseek-harness-zh-cn
 
+**English** | [简体中文](README.zh.md)
+
+![npm version](https://img.shields.io/npm/v/deepseek-harness-zh-cn)
+![license](https://img.shields.io/npm/l/deepseek-harness-zh-cn)
+![downloads](https://img.shields.io/npm/dm/deepseek-harness-zh-cn)
+
 A Chinese-first plugin that makes [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) reason (`reasoning`) and answer in Simplified Chinese by default.
 
 ## Overview
