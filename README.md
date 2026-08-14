@@ -74,7 +74,7 @@ Restart `dsh web`.
 ## How It Works
 
 - **Method 1**: `~/.dsh/AGENTS.md` is injected by `dsh-agent-instructions` as a `<system-reminder>` user message — guidance-level, lower priority than the system prompt and direct user instructions.
-- **Method 2**: the plugin injects into the system prompt itself via `ctx.systemPrompt.section()` at `order: -150`, ahead of the harness identity (`-100`) and persona (`0`) — higher priority.
+- **Method 2**: the plugin listens to the `agent/pre-step` waterfall and appends a `<system-reminder>` user message to the request batch at the first step of each turn, reinforcing the Chinese rule once per turn.
 
 ## Development
 

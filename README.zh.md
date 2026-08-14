@@ -74,7 +74,7 @@ npm install deepseek-harness-zh-cn --save
 ## 原理
 
 - **方式一**：`~/.dsh/AGENTS.md` 由 `dsh-agent-instructions` 以 `<system-reminder>` 用户消息注入，属于「指导级」指令，优先级低于系统提示词与直接用户指令。
-- **方式二**：插件通过 `ctx.systemPrompt.section()` 以 `order: -150` 注入**系统提示词本体**，排在 harness 身份（`-100`）与 persona（`0`）之前，优先级更高。
+- **方式二**：插件监听 `agent/pre-step` 瀑布事件，在每轮（turn）第一步把 `<system-reminder>` 用户消息追加进请求批次，实现每轮一次的中文约束注入。
 
 ## 开发
 
