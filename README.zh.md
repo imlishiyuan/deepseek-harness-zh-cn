@@ -40,9 +40,21 @@ Windows 手动复制即可。完成后重启 `dsh web`（或新建会话）。
 
 ### 方式二：安装 npm 插件
 
+**A. 官方命令**（底层走 pnpm，需先安装 pnpm）：
+
 ```sh
-npm install deepseek-harness-zh-cn
+npm i -g pnpm
+dsh plugin --profile web add deepseek-harness-zh-cn
 ```
+
+**B. 直接用 npm 装进 profile 目录**：
+
+```sh
+cd ~/.dsh/profiles/web    # Windows: C:\Users\<你>\.dsh\profiles\web
+npm install deepseek-harness-zh-cn --save
+```
+
+> 注意：这里的 `npm install` 是在 **DSH 的 profile 目录**里执行，不是在本插件项目目录。
 
 在 `~/.dsh/profiles/<name>/cordis.patch.yml` 中挂载：
 

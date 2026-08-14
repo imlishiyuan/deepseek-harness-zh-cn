@@ -40,9 +40,21 @@ On Windows, copy the file manually. Then restart `dsh web` (or start a new sessi
 
 ### Method 2: Install the npm plugin
 
+**A. Official command** (backs onto pnpm; install pnpm first):
+
 ```sh
-npm install deepseek-harness-zh-cn
+npm i -g pnpm
+dsh plugin --profile web add deepseek-harness-zh-cn
 ```
+
+**B. Install with npm directly into the profile directory**:
+
+```sh
+cd ~/.dsh/profiles/web    # Windows: C:\Users\<you>\.dsh\profiles\web
+npm install deepseek-harness-zh-cn --save
+```
+
+> Note: this `npm install` runs inside the **DSH profile directory**, not this plugin's project directory.
 
 Mount it in `~/.dsh/profiles/<name>/cordis.patch.yml`:
 
