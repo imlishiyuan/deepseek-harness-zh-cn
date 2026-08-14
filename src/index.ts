@@ -1,9 +1,11 @@
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import type {} from '@deepseek-ai/dsh-agent'
+import type { PreStepDecision } from '@deepseek-ai/dsh-agent'
+import { createUserMessage } from '@deepseek-ai/dsh-llm'
 
 export const name = 'deepseek-harness-zh-cn'
 
-export const inject = ['systemPrompt']
+export const inject: string[] = []
 
 const ZH_DIRECTIVE = [
   '始终使用简体中文进行思考（reasoning）与所有最终回答。',
@@ -13,9 +15,19 @@ const ZH_DIRECTIVE = [
 ].join('\n')
 
 export function apply(ctx: Context): void {
-  ctx.effect(() => ctx.systemPrompt.section({
-    name: 'locale:zh-cn',
-    order: -150,
-    text: ZH_DIRECTIVE,
-  }), 'deepseek-harness-zh-cn: locale directive')
+  ctx.on('agent/pre-step', async ({ step, signal }, next): Promise<PreStepDecision> => {
+    const decision = await next()
+    if (decision.kind === 'reject' || signal.aborted) return decision
+    if (step !== 1) return decision
+    return {
+      kind: 'enter',
+      messages: [
+        ...decision.messages,
+        createUserMessage({
+          content: [{ type: 'text', text: `<system-reminder>\n${ZH_DIRECTIVE}\n</system-reminder>` }],
+          source: { kind: 'plugin', plugin: name, form: 'snapshot', sections: [{ name, text: ZH_DIRECTIVE }] },
+        }),
+      ],
+    }
+  }, { prepend: true })
 }
