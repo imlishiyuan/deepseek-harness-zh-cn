@@ -1,0 +1,37 @@
+{
+  "name": "deepseek-harness-zh-cn",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A Chinese-first plugin for DeepSeek Harness: reason (reasoning) and answer in Simplified Chinese by default.",
+  "license": "Apache-2.0",
+  "exports": "./lib/index.js",
+  "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "README.md",
+    "README.zh.md",
+    "LICENSE",
+    "AGENTS.md.example"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "chinese",
+    "i18n",
+    "locale",
+    "plugin"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-system-prompt": "*"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-system-prompt": "*",
+    "typescript": "^5"
+  }
+}
