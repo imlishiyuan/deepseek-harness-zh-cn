@@ -15,6 +15,8 @@ This project offers two ways (**choose one; the first is recommended**) to turn 
 - **Method 1 (recommended, simplest)**: copy `AGENTS.md.example` to `~/.dsh/AGENTS.md`.
 - **Method 2 (plugin)**: install this package from npm and mount it in the profile.
 
+> **Tip**: this plugin's "Chinese-first" rules can also be achieved with the [keep-reminder](https://github.com/imlishiyuan/keep-reminder) plugin — put the same rules into a project's `.keep-reminder` file, and customize the content freely (not limited to language).
+
 ## Screenshot
 
 <div align="center">

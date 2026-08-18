@@ -15,6 +15,8 @@
 - **方式一（推荐，最简单）**：把 `AGENTS.md.example` 的内容复制到 `~/.dsh/AGENTS.md`。
 - **方式二（插件方式）**：通过 npm 安装本包，并在 profile 中挂载。
 
+> **提示**：本插件的「中文优先」规则，也可以用 [keep-reminder](https://github.com/imlishiyuan/keep-reminder) 插件实现——把同样的规则写进项目里的 `.keep-reminder` 文件即可，且规则内容可自由定制（不只限于语言）。
+
 ## 效果图
 
 <div align="center">
