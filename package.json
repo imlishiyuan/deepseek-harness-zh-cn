@@ -11,7 +11,8 @@
     "README.md",
     "README.zh.md",
     "LICENSE",
-    "AGENTS.md.example"
+    "AGENTS.md.example",
+    "cordis.patch.yml"
   ],
   "keywords": [
     "deepseek-harness",
@@ -46,5 +47,10 @@
   "homepage": "https://github.com/imlishiyuan/deepseek-harness-zh-cn#readme",
   "bugs": {
     "url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   }
 }
